@@ -32,6 +32,7 @@ simple_rules_usr = {
 		-- Defaults:
 		{prefix = "/usr/lib/perl", map_to = tools},
 		{prefix = "/usr/lib/gcc", map_to = tools},
+		{prefix = "/usr/libexec/gcc", map_to = tools},
 		{prefix = "/usr/lib", map_to = target_root},
 		{prefix = "/usr/include", map_to = target_root},
 

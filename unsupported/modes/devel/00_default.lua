@@ -549,6 +549,7 @@ devel_mode_rules_usr = {
 		-- there.
 
 		{prefix = "/usr/lib/gcc", map_to = tools, readonly = true},
+		{prefix = "/usr/libexec/gcc", map_to = tools, readonly = true},
 
 		{prefix = "/usr/lib/perl", actions = perl_lib_test},
 

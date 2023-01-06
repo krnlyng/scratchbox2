@@ -641,6 +641,7 @@ emulate_mode_rules_usr = {
 		 protection = readonly_fs_always},
 
 		{dir = "/usr/lib/gcc", actions = test_first_tools_then_target_default_is_tools},
+		{dir = "/usr/libexec/gcc", actions = test_first_tools_then_target_default_is_tools},
 
 		{prefix = "/usr/lib/perl", actions = perl_lib_test},
 

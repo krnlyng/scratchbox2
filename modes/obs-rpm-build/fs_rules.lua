@@ -495,6 +495,7 @@ emulate_mode_rules_usr = {
 		 protection = readonly_fs_always},
 
 		{dir = "/usr/lib/gcc", actions = test_first_tools_then_target_default_is_tools},
+		{dir = "/usr/libexec/gcc", actions = test_first_tools_then_target_default_is_tools},
 
 		-- If a program from tools loads plugins,
 		-- they should be dlopened from tools as well.
