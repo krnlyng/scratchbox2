@@ -27,6 +27,9 @@ rules_dev = {
 	 func_class = FUNC_CLASS_STAT, use_orig_path = true},
 
 	{name = "rule lib: /dev/shm/*",
+	 dir = "/dev/shm", use_orig_path = true},
+
+	{name = "rule lib: /dev/shm/*",
 	 dir = "/dev/shm",
 	 replace_by = session_dir .. "/tmp"},
 
