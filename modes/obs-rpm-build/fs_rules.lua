@@ -171,6 +171,10 @@ emulate_mode_rules_usr_bin = {
 		 actions=accelerated_program_actions},
 		{path="/usr/bin/cargo",
 		 actions=accelerated_program_actions},
+		{path="/usr/bin/clang",
+		 actions=accelerated_program_actions},
+		{path="/usr/bin/clang++",
+		 actions=accelerated_program_actions},
 		{path="/usr/bin/cksum",
 		 actions=accelerated_program_actions},
 		{path="/usr/bin/cmp",
@@ -495,6 +499,17 @@ emulate_mode_rules_usr = {
 		 protection = readonly_fs_always},
 
 		{dir = "/usr/lib/gcc", actions = test_first_tools_then_target_default_is_tools},
+		-- Clang is a bit special, it doesn't have it's own folder for libclang.so, but
+		-- we still need to use the proper version
+		-- It first tries libclang.so which may exist on the target but not tooling
+		{path = "/usr/lib/libclang.so", force_orig_path = true},
+		{path = "/usr/lib64/libclang.so", force_orig_path = true},
+		{prefix = "/usr/lib/libclang.so.", map_to = tools},
+		{prefix = "/usr/lib64/libclang.so.", map_to = tools},
+		{path = "/usr/lib/libclang-cpp.so", force_orig_path = true},
+		{path = "/usr/lib64/libclang-cpp.so", force_orig_path = true},
+		{prefix = "/usr/lib/libclang-cpp.so.", map_to = tools},
+		{prefix = "/usr/lib64/libclang-cpp.so.", map_to = tools},
 
 		-- If a program from tools loads plugins,
 		-- they should be dlopened from tools as well.
